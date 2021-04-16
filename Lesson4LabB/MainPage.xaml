@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Lesson4LabB"
+             x:Class="Lesson4LabB.MainPage">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="LightGray" />
+            </Style>
+        </ResourceDictionary>
+        
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout Margin="20,50,20,25">
+            
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <Editor x:Name="Editor" Placeholder="Enter some text..." AutoSize="TextChanges"></Editor>
+                <Entry x:Name="Entry" Placeholder="Enter some text..." />
+                <Label x:Name="Label" Text="{Binding Text, StringFormat='The Entry text is: {0:F0}'}" BindingContext="{x:Reference Entry}" />
+                <Button Text="Make Text Uppercase" Clicked="Uppercase_Button_OnClicked"></Button>
+                <Button Text="Make Text Lowercase" Clicked="Lowercase_Button_OnClicked"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+
+
+</ContentPage>
